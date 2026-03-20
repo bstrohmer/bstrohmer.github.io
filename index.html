@@ -279,6 +279,93 @@
       margin-top: 0.5rem;
     }
 
+    /* ── RESEARCH INTERESTS ── */
+    .research-interests {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .ri-label {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+
+    .ri-tag {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      border: 1px solid var(--faint);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    /* ── NEWS / UPCOMING ── */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1.2rem;
+      align-items: baseline;
+    }
+
+    .news-date {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .news-body { display: flex; flex-direction: column; gap: 0.15rem; }
+
+    .news-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .news-title:hover { color: var(--accent); }
+
+    .news-loc {
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── PUB TAG (software etc.) ── */
+    .pub-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--faint);
+      padding: 0.1rem 0.45rem;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 0.4rem;
+    }
+
     /* ── CV ── */
     .cv-block { display: flex; flex-direction: column; gap: 0.8rem; }
 
@@ -370,8 +457,8 @@
   <nav>
     <a href="#about" class="nav-name">beck strohmer</a>
     <ul class="nav-links">
+      <li><a href="#news">news</a></li>
       <li><a href="#publications">publications</a></li>
-      <li><a href="#software">software</a></li>
       <li><a href="#projects">research</a></li>
       <li><a href="#cv">cv</a></li>
       <li><a href="#contact">contact</a></li>
@@ -409,6 +496,47 @@
         <a href="https://www.linkedin.com/in/bstrohmer" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.researchgate.net/profile/Beck-Strohmer-2" target="_blank" rel="noopener">ResearchGate</a>
       </div>
+      <div class="research-interests">
+        <span class="ri-label">Research interests</span>
+        <span class="ri-tag">spiking neural networks</span>
+        <span class="ri-tag">neurodegenerative disease</span>
+        <span class="ri-tag">spinal circuits</span>
+        <span class="ri-tag">amyotrophic lateral sclerosis</span>
+        <span class="ri-tag">frontotemporal dementia</span>
+        <span class="ri-tag">computational modeling</span>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <div class="section-label">upcoming meetings</div>
+      <div class="news-list">
+
+        <div class="news-item">
+          <span class="news-date">Apr 13–14, 2026</span>
+          <div class="news-body">
+            <a href="https://lundbeckfonden.com/lfin" target="_blank" rel="noopener" class="news-title">Lundbeck Foundation Investigator Network (LFIN) Meeting</a>
+            <span class="news-loc">Denmark</span>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Jul 5, 2026</span>
+          <div class="news-body">
+            <a href="https://motor-control-satellite-2026.umh.es/" target="_blank" rel="noopener" class="news-title">The Dynamics of Motor Control: Circuit Interactions in Health and Disease</a>
+            <span class="news-loc">FENS Satellite Symposium · Barcelona, Spain</span>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Jul 6–10, 2026</span>
+          <div class="news-body">
+            <a href="https://fensforum.org/" target="_blank" rel="noopener" class="news-title">Federation of European Neuroscience Societies Forum (FENS 2026)</a>
+            <span class="news-loc">Barcelona, Spain</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- PUBLICATIONS -->
@@ -422,6 +550,7 @@
             <p class="pub-title">Spinal circuit mechanisms constrain therapeutic windows for ALS intervention: a computational modeling study</p>
             <p class="pub-meta">Strohmer B, Grosh K, Montañana-Rosell R, Mora S, Ausborn J, Allodi I. <em>Neurobiology of Disease</em>, 107253.</p>
             <a class="pub-link" href="https://doi.org/10.1016/j.nbd.2025.107253" target="_blank" rel="noopener">doi → 10.1016/j.nbd.2025.107253</a>
+            <a class="pub-link" href="https://github.com/Allodi-Lab/cpg_modeling_als" target="_blank" rel="noopener">code →</a>
           </div>
         </div>
 
@@ -431,6 +560,7 @@
             <p class="pub-title">Sparse firing in a hybrid central pattern generator for spinal motor circuits</p>
             <p class="pub-meta">Strohmer B*, Najarro E*, Ausborn J, Berg RW, Tolu S. <em>Neural Computation</em>, 36(5), 759–780.</p>
             <a class="pub-link" href="https://doi.org/10.1162/neco_a_01660" target="_blank" rel="noopener">doi → 10.1162/neco_a_01660</a>
+            <a class="pub-link" href="https://github.com/bstrohmer/hybrid-cpg" target="_blank" rel="noopener">code →</a>
           </div>
         </div>
 
@@ -488,18 +618,10 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- SOFTWARE -->
-    <section id="software">
-      <div class="section-label">software contributions</div>
-      <div class="pub-list">
-
         <div class="pub">
           <span class="pub-year">2023</span>
           <div>
-            <p class="pub-title">NESTML 7.0.0</p>
+            <p class="pub-title">NESTML 7.0.0 <span class="pub-tag">software</span></p>
             <p class="pub-meta">Linssen CAP, Babu PN, Eppler JM, Ewert L, Blaszczyk K, Wybo W, Strohmer B, Rumpe B, Morrison A. Domain-specific language and code-generation toolchain for neuron and synapse models in NEST. <em>Zenodo</em>.</p>
             <a class="pub-link" href="https://doi.org/10.5281/zenodo.10125416" target="_blank" rel="noopener">doi → 10.5281/zenodo.10125416</a>
           </div>
@@ -520,9 +642,9 @@
           </div>
           <div class="project-meta">
             <div class="project-meta-row"><span class="project-meta-label">Role</span><span>Co-investigator</span></div>
-            <div class="project-meta-row"><span class="project-meta-label">Skills</span><span>Python, disease modelling, data analysis, cross-disciplinary collaboration, project management</span></div>
+            <div class="project-meta-row"><span class="project-meta-label">Skills</span><span>Python, disease modeling, data analysis, cross-disciplinary collaboration, project management</span></div>
           </div>
-          <p class="project-desc">We modelled progressive interneuron dysregulation and synaptic loss in a spinal central pattern generator (CPG) network to simulate ALS disease dynamics, then applied synaptic stabilization at different stages to identify optimal intervention windows.</p>
+          <p class="project-desc">We modeled progressive interneuron dysregulation and synaptic loss in a spinal central pattern generator (CPG) network to simulate ALS disease dynamics, then applied synaptic stabilization at different stages to identify optimal intervention windows.</p>
           <p class="project-desc" style="margin-top:0.6rem;">Model predictions of excitatory interneuron sparing under synaptic stabilization were experimentally validated in an ALS mouse model, demonstrating that computational approaches can generate testable hypotheses with translational relevance.</p>
           <p class="project-affil">University of Copenhagen · University of St Andrews</p>
         </div>
@@ -534,7 +656,7 @@
           </div>
           <div class="project-meta">
             <div class="project-meta-row"><span class="project-meta-label">Role</span><span>Postdoctoral researcher </span></div>
-            <div class="project-meta-row"><span class="project-meta-label">Skills</span><span>Python, locomotion modelling, data analysis, cross-disciplinary collaboration</span></div>
+            <div class="project-meta-row"><span class="project-meta-label">Skills</span><span>Python, locomotion modeling, data analysis, cross-disciplinary collaboration</span></div>
           </div>
           <p class="project-desc">We developed a biologically plausible spiking neural network model of spinal locomotor circuits, addressing the gap between computational CPG models and experimental recordings by replicating sparse, phase-distributed firing of individual neurons within rhythm-generating populations.</p>
           <p class="project-desc" style="margin-top:0.6rem;">The model moves toward recent experimental findings of evenly distributed neuronal firing across phases in spinal circuits, providing a novel computational tool for exploring how connectivity and excitation/inhibition balance shape rhythmic output.</p>
